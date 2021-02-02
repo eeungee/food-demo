@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { TextField } from '@material-ui/core';
+import { TextField, IconButton  } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
 @inject('foodStore')
@@ -10,6 +10,8 @@ class Main extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.search.value)
+    this.props.foodStore.addFood(e.target.search.value)
+    this.props.changePage(1)
   }
 
   render(){
@@ -19,7 +21,9 @@ class Main extends React.Component{
     }}>
         <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
           <TextField name="search" id="outlined-basic" label="Search" variant="outlined" />
+          <IconButton style={{padding:0}} type="submit">
           <SearchIcon style={{width:56, height:56}} />
+          </IconButton>
         </form>
     </div>
   }
