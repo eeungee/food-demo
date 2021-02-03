@@ -32,7 +32,7 @@ class Nutrition extends React.Component {
         </div>
         <ul>
           {this.props.foodStore.foods.map((food, index) => {
-            return <li>{food}</li>
+            return <li key={index}>{food}</li>
           })}
         </ul>
       </div>
