@@ -1,0 +1,57 @@
+{
+    "I2790": {
+        "RESULT": {
+            "MSG": "정상처리되었습니다.",
+            "CODE": "INFO-000"
+        },
+        "total_count": "2",
+        "row": [
+            {
+                "NUTR_CONT3": "37.4",
+                "NUTR_CONT2": "1.3",
+                "NUTR_CONT1": "245",
+                "SERVING_SIZE": "200",
+                "MAKER_NAME": "",
+                "NUTR_CONT9": "0.2",
+                "NUTR_CONT8": "1.6",
+                "FOOD_CD": "D018015",
+                "NUTR_CONT7": "168.65",
+                "NUTR_CONT6": "630.39",
+                "NUTR_CONT5": "0",
+                "NUTR_CONT4": "10",
+                "DESC_KOR": "가자미구이",
+                "SAMPLING_MONTH_NAME": "평균",
+                "SUB_REF_NAME": "식약처 영양실태조사(\u002720)",
+                "SAMPLING_REGION_NAME": "전국(대표)",
+                "GROUP_NAME": "",
+                "RESEARCH_YEAR": "2020",
+                "SAMPLING_REGION_CD": "ZZ",
+                "SAMPLING_MONTH_CD": "AVG",
+                "NUM": "1"
+            },
+            {
+                "NUTR_CONT3": "23",
+                "NUTR_CONT2": "15",
+                "NUTR_CONT1": "280",
+                "SERVING_SIZE": "210",
+                "MAKER_NAME": "㈜현대그린푸드 스마트푸드센터",
+                "NUTR_CONT9": "0.1",
+                "NUTR_CONT8": "20",
+                "FOOD_CD": "P039754",
+                "NUTR_CONT7": "90",
+                "NUTR_CONT6": "490",
+                "NUTR_CONT5": "5",
+                "NUTR_CONT4": "14",
+                "DESC_KOR": "저당식단 가자미구이/라타투이소스 세트",
+                "SAMPLING_MONTH_NAME": "평균",
+                "SUB_REF_NAME": "식약처(\u002720)",
+                "SAMPLING_REGION_NAME": "전국(대표)",
+                "GROUP_NAME": "즉석식품류",
+                "RESEARCH_YEAR": "2020",
+                "SAMPLING_REGION_CD": "ZZ",
+                "SAMPLING_MONTH_CD": "AVG",
+                "NUM": "2"
+            }
+        ]
+    }
+}
