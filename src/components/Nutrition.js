@@ -29,13 +29,16 @@ class Nutrition extends React.Component {
               {/* <p>출처 : {food.result_from}</p> */}
               </div>
           })}
+          <button 
+          style={{width:60, height:60, backgroundColor: 'teal', borderRadius: '50%', textAlign: 'center', border: 'none', fontSize: 20, color: 'white', position: 'fixed', right:16, bottom:16 }}>
+            MY
+          </button>
       </div>
       <IconButton onClick={() => this.props.changePage(0)} style={{ padding: 0, position:'fixed', top:16, right:16 }}>
         <SearchIcon style={{ width: 56, height: 56 }} />
       </IconButton>
     </div>
   }
-
 }
 
 export default Nutrition
