@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Button , IconButton } from '@material-ui/core';
+import { Button , IconButton, Checkbox  } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import '../styles/media.css'
 
@@ -13,19 +13,46 @@ class Nutrition extends React.Component {
     this.state = {}
   }
 
+
+  checkEachFood = (food_name) => {
+
+    const renewalFood = this.props.foodStore.foods.map((food) => {
+      if(food.food_name == food_name){
+        return {
+          ...food,
+          checked: !food.checked
+        }
+      }else{
+        return {
+          ...food
+        }
+      }
+    })
+
+    this.props.foodStore.resetFood(renewalFood)
+    console.log(renewalFood)
+
+  }
+
+
   render() {
     return <div>
       <h1>영양 성분</h1>
       <div style={{ display: 'flex', borderTop: "1px solid", flexWrap:'wrap', height: '300px', overflowY:'scroll',  overflowX:'hidden' }}>
           {this.props.foodStore.foods.map((food, index) => {
             return <div style={{ padding: 4, maxWidth:300, minWidth:200 ,width: '32%',height: '300px', borderBottom: '1px solid gray', overFlow: 'scroll', backgroundColor: 'lightblue'}} key={index} className="each_food">
-              <h2>{food.food_name}</h2>
-              <p>칼로리 : {food.kcal} kcal / {food.serving_size} g</p>
-              <p>탄수화물 : {food.carbo} g</p>
-              <p>단백질 : {food.pro} g</p>
-              <p>지방 : {food.fat} g</p>
-              <p>당 : {food.sugar} g</p>
-              <p>나트륨 : {food.salt} g</p>
+              <h2>{food.food_name}<Checkbox
+                checked={food.checked}
+                onChange={() => this.checkEachFood(food.food_name)}
+                color="primary"
+                inputProps={{ 'aria-label': 'secondary checkbox' }}
+              /></h2>
+              <p>칼로리 : {food.kcal ? food.kcal : '0'} kcal / {food.serving_size} g</p>
+              <p>탄수화물 : {food.carbo ? food.carbo : '0'} g</p>
+              <p>단백질 : {food.pro ? food.pro : '0'} g</p>
+              <p>지방 : {food.fat ? food.fat : '0'} g</p>
+              <p>당 : {food.sugar ? food.sugar : '0'} g</p>
+              <p>나트륨 : {food.salt ? food.salt : '0'} g</p>
               {/* <p>출처 : {food.result_from}</p> */}
               </div>
           })}
@@ -34,7 +61,8 @@ class Nutrition extends React.Component {
         <SearchIcon style={{ width: 56, height: 56 }} />
       </IconButton>
       <Button 
-          style={{width:56, height:56, border: '0.3px solid lightgray', fontSize: 18, fontWeight:'bold', padding: 0, position: 'fixed', right:16, top:16 }}>
+          style={{width:56, height:56, border: '0.3px solid lightgray', fontSize: 18, fontWeight:'bold', padding: 0, position: 'fixed', right:16, top:16 }}
+          onClick={() => this.props.changePage(2)} >
           MY
       </Button>
     </div>

@@ -12,8 +12,6 @@ const getData = async (food) => {
 @observer
 class Main extends React.Component{
 
-
-
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.search.value)
@@ -21,9 +19,9 @@ class Main extends React.Component{
 
       const correctFoods = result.data.I2790.row.filter((food) => food.DESC_KOR === e.target.search.value)
       
-
       if(!correctFoods.length){
         console.log("정의안댐!")
+        window.alert("없는 음식입니다. 구체적으로 입력해주세요.")
         return;
       }
 
@@ -50,7 +48,8 @@ class Main extends React.Component{
         pro : NUTR_CONT3,
         fat : NUTR_CONT4,
         sugar : NUTR_CONT5,
-        salt :NUTR_CONT6
+        salt :NUTR_CONT6,
+        checked : false
       })
     })
     .catch(failed=>console.log(failed))

@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from './components/Main'
 import Nutrition from './components/Nutrition'
+import My from './components/My'
 import './App.css';
 
 class App extends React.Component{
@@ -23,6 +24,7 @@ class App extends React.Component{
     return (<div>
       {currentPage == 0 && <Main changePage={this.changePage} />}
       {currentPage == 1 && <Nutrition changePage={this.changePage} />}
+      {currentPage == 2 && <My changePage={this.changePage} />}
     </div>)
   }
 }
