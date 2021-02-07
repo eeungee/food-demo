@@ -2,7 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Button , IconButton, Checkbox  } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import '../styles/media.css'
+import '../styles/Nutrition.css'
 
 @inject('foodStore')
 @observer
@@ -37,10 +37,10 @@ class Nutrition extends React.Component {
 
   render() {
     return <div>
-      <h1>영양 성분</h1>
-      <div style={{ display: 'flex', borderTop: "1px solid", flexWrap:'wrap', height: '300px', overflowY:'scroll',  overflowX:'hidden' }}>
+      <h1 className="header">영양 성분</h1>
+      <div className="searched_food_container">
           {this.props.foodStore.foods.map((food, index) => {
-            return <div style={{ padding: 4, maxWidth:300, minWidth:200 ,width: '32%',height: '300px', borderBottom: '1px solid gray', overFlow: 'scroll', backgroundColor: 'lightblue'}} key={index} className="each_food">
+            return <div key={index} className="each_food">
               <h2>{food.food_name}<Checkbox
                 checked={food.checked}
                 onChange={() => this.checkEachFood(food.food_name)}

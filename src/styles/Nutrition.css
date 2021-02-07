@@ -1,0 +1,43 @@
+*{
+  padding: 0; margin: 0;
+}
+
+.header {
+  font-family: 'NEXONFootballGothicBA1';
+  height: 90px;
+  line-height: 90px;
+  margin-left: 30px;
+  font-size: 45px;
+}
+
+.searched_food_container{
+  display: flex;
+  border-top: 1px solid;
+  flex-wrap: wrap;
+  height: 300px;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
+}
+
+.each_food{
+  padding: 4;
+  max-width:300;
+  min-width:200;
+  width: 32%;
+  height: 300px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .each_food {
+        width: 49%
+    }
+  }
+
+@font-face {
+    font-family: 'NEXONFootballGothicBA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
