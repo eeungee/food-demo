@@ -20,3 +20,5 @@ git remote -v
 git remote set-url origin "https://계정명@github.com/계정명/저장소명.git"
 
 이후 다시 push 시도 
+
+https://github.com/eeungee/food-demo.git
